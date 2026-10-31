@@ -137,34 +137,18 @@ h3{font-family:var(--disp);font-weight:700;font-size:1.15rem;line-height:1.25;le
 @media(max-width:420px){.hide-sm{display:none}.logo{font-size:.72rem}}
 .ig-btn{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;border:2px solid var(--lav);color:var(--lav);transition:background .25s,color .25s,rotate .35s var(--pop),scale .35s var(--pop)}
 .ig-btn:hover{background:var(--lav);color:var(--char);rotate:-10deg;scale:1.08}
-/* phone home-screen gallery */
-.work-grid{display:grid;gap:50px;align-items:center}
-.phone{width:min(360px,100%);margin:0 auto;aspect-ratio:9/19;border-radius:54px;padding:11px;background:#0c0c0d;border:2px solid #2e2e33;box-shadow:inset 0 0 0 2px #000,0 50px 90px -40px rgba(181,124,255,.7),0 0 0 6px rgba(255,255,255,.03)}
-.screen{height:100%;border-radius:44px;overflow:hidden;display:flex;flex-direction:column;padding:12px 16px 10px;color:#fff;
- background:radial-gradient(110% 70% at 0% 0%,rgba(181,124,255,.6),transparent 60%),radial-gradient(110% 70% at 100% 100%,rgba(255,244,79,.35),transparent 60%),#18181b}
-.island{width:92px;height:27px;background:#000;border-radius:20px;margin:0 auto}
-.statusbar{display:flex;justify-content:space-between;align-items:center;height:27px;margin-top:-27px;padding:0 8px;font-weight:700;font-size:.82rem}
-.sb-icons{display:flex;gap:5px;align-items:center}
-.widget{margin-top:18px;background:var(--lemon);color:var(--char);border-radius:22px;padding:13px 16px;display:flex;flex-direction:column;gap:2px}
-.widget small{font-family:var(--disp);font-weight:700;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;opacity:.7}
-.widget b{font-family:var(--disp);font-weight:800;font-size:.95rem;display:flex;align-items:center;gap:8px}
-.widget .dot{background:var(--char)}.widget .dot.open{background:#151515;animation:none}
-.widget span{font-size:.75rem;opacity:.75}
-.apps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px 14px;margin-top:20px}
-.app{all:unset;box-sizing:border-box;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:6px;min-width:0}
-.ico{width:100%;aspect-ratio:1;border-radius:24%;background:#2b2b30 center/cover no-repeat;box-shadow:0 8px 16px -6px rgba(0,0,0,.6);position:relative;transition:scale .35s var(--pop),rotate .35s var(--pop)}
-.app:hover .ico{scale:1.1;rotate:-4deg}
-.app:active .ico{scale:.92}
-.app:focus-visible .ico{outline:3px solid var(--lemon);outline-offset:3px}
-.lbl{font-size:.66rem;font-weight:500;line-height:1;text-shadow:0 1px 3px rgba(0,0,0,.7);white-space:nowrap;max-width:100%;overflow:hidden;text-overflow:ellipsis}
-.play{position:absolute;right:5px;bottom:5px;width:19px;height:19px;border-radius:50%;background:rgba(0,0,0,.6);display:grid;place-items:center}
-.ico.more{background:linear-gradient(135deg,var(--lav),var(--lemon));display:grid;place-items:center;font-family:var(--disp);font-weight:800;font-size:.8rem;color:var(--char)}
-.dock{margin-top:auto;background:rgba(255,255,255,.14);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-radius:30px;padding:11px 12px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.dock .ico{display:grid;place-items:center}
-.dock a:hover .ico{scale:1.1;rotate:-4deg}
-.d-call{background:var(--lemon)!important}.d-ig{background:linear-gradient(135deg,var(--lav),#ff7ad9 55%,var(--lemon))!important;color:#fff}
-.d-map{background:#f5f5ef!important}.d-fb{background:var(--lav)!important}
-.homebar{width:118px;height:5px;border-radius:3px;background:rgba(255,255,255,.7);margin:9px auto 0}
+/* iPhone-style app icon gallery */
+.work-head{margin-bottom:48px}
+.work-head h2{margin-bottom:14px}.work-head .lead{max-width:34em;margin-bottom:26px}
+.apps{display:grid;grid-template-columns:repeat(4,1fr);gap:26px 18px}
+.app{all:unset;box-sizing:border-box;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:10px;min-width:0;color:var(--text);text-decoration:none}
+.ico{width:100%;aspect-ratio:1;border-radius:23%;background:var(--char3) center/cover no-repeat;box-shadow:0 14px 28px -12px rgba(0,0,0,.8),inset 0 0 0 1px rgba(255,255,255,.08);position:relative;transition:scale .35s var(--pop),rotate .35s var(--pop),box-shadow .3s}
+.app:hover .ico{scale:1.08;rotate:-4deg;box-shadow:0 18px 36px -12px rgba(181,124,255,.75),inset 0 0 0 1px rgba(255,255,255,.12)}
+.app:active .ico{scale:.94}
+.app:focus-visible .ico{outline:3px solid var(--lemon);outline-offset:4px}
+.lbl{font-size:.82rem;font-weight:500;line-height:1.1;white-space:nowrap;max-width:100%;overflow:hidden;text-overflow:ellipsis}
+.play{position:absolute;right:8%;bottom:8%;width:26px;height:26px;border-radius:50%;background:rgba(0,0,0,.6);backdrop-filter:blur(4px);display:grid;place-items:center}
+.ico.more{background:linear-gradient(135deg,var(--lav),var(--lemon));display:grid;place-items:center;font-family:var(--disp);font-weight:800;font-size:1.05rem;color:var(--char)}
 /* lightbox */
 .lb{position:fixed;inset:0;z-index:50;background:rgba(10,10,10,.95);display:flex;align-items:center;justify-content:center;padding:70px 14px}
 .lb[hidden]{display:none}
@@ -232,6 +216,7 @@ footer a{text-decoration:none}
 footer p a:hover{color:var(--lemon)}
 
 @media(min-width:640px){
+ .apps{grid-template-columns:repeat(5,1fr)}
  .services{grid-template-columns:repeat(2,1fr)}
  .bento{grid-template-columns:repeat(2,1fr)}
  .bento .big{grid-column:span 2}
@@ -245,7 +230,7 @@ footer p a:hover{color:var(--lemon)}
  .visual{height:480px;margin-bottom:0}
  .badge{left:-60px;bottom:-40px}
  .services{grid-template-columns:repeat(3,1fr)}
- .work-grid{grid-template-columns:1fr auto;gap:70px}
+ .apps{grid-template-columns:repeat(6,1fr);gap:34px 26px}
  .bento{grid-template-columns:repeat(4,1fr);grid-auto-rows:minmax(200px,auto)}
  .bento .big{grid-column:span 2;grid-row:span 2}
  .bento .wide{grid-column:span 2}
@@ -334,40 +319,26 @@ footer p a:hover{color:var(--lemon)}
 </div></section>
 
 <!-- WORK: iPhone home-screen gallery -->
-<section id="work"><div class="wrap work-grid">
- <div>
+<section id="work"><div class="wrap">
+ <div class="work-head">
   <div class="label reveal left"><b>03</b> Our work</div>
   <h2 class="reveal">Straight from <span class="hl">the chair.</span></h2>
   <p class="lead reveal">Photos and reels from the shop. Tap any app to open it, then swipe through.</p>
   <div class="cta reveal"><a class="btn lav" target="_blank" rel="noopener" href="https://www.google.com/maps/place/Melton+Barber+House/@-37.682233,144.58329,17z/data=!4m7!3m6!1s0x6ad6ed6883b16115:0x29448b04a3ed61b8!8m2!3d-37.682233!4d144.58329!10e5">See all on Google</a><a class="btn" target="_blank" rel="noopener" href="https://www.instagram.com/meltonbarberhouse/">Follow on Instagram</a></div>
  </div>
- <div class="phone reveal pop" role="group" aria-label="Gallery shown as a phone home screen">
-  <div class="screen">
-   <div class="island"></div>
-   <div class="statusbar" aria-hidden="true"><span class="clock">9:41</span><span class="sb-icons"><svg viewBox="0 0 18 12" width="17" height="11" fill="#fff"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5" width="3" height="7" rx="1"/><rect x="10" y="2" width="3" height="10" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><svg viewBox="0 0 26 12" width="24" height="11"><rect x=".5" y=".5" width="22" height="11" rx="3" fill="none" stroke="#fff" opacity=".5"/><rect x="2" y="2" width="16" height="8" rx="2" fill="#FFF44F"/><rect x="23.5" y="4" width="2" height="4" rx="1" fill="#fff" opacity=".5"/></svg></span></div>
-   <div class="widget status reveal pop"><small>Melton Barber House</small><b><i class="dot"></i><span class="status-text">Open 7 days</span></b><span>58 Palmerston St · walk-ins welcome</span></div>
-   <div class="apps" data-stagger>
+ <div class="apps" data-stagger>
     <button class="app reveal pop" data-type="img" data-src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9SxKyhK2LikY4M58CQyf0v7jLsqBqvB4kqx691zeblXWeYWNRwiTqQobVsKPuoajYQkJ2Vm-o6P-I1NYi9O5EKisxMuWQ80nwSZLYS_QkzCWNQQnF1Nq0LRc_Z-C0V4y7fYuASKWQ=w1600" data-alt="Barbers at work inside Melton Barber House"><span class="ico" style="background-image:url('https://lh3.googleusercontent.com/gps-cs-s/ANWiy9SxKyhK2LikY4M58CQyf0v7jLsqBqvB4kqx691zeblXWeYWNRwiTqQobVsKPuoajYQkJ2Vm-o6P-I1NYi9O5EKisxMuWQ80nwSZLYS_QkzCWNQQnF1Nq0LRc_Z-C0V4y7fYuASKWQ=w300-h300-p-k-no')"></span><span class="lbl">At work</span></button>
     <button class="app reveal pop" data-type="video" data-src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9TmpFbckfccIgCvTWaEv83PXmN0CREpd7RRzR7j8pBBmIPmUPax98H4CCIU_OGd6zYrolGA0JJ6z9GEtyU16zxbwnrL0BRgBVLb2QdGm9u9cr8Jc7WLHXeRl1w_SHUle5y2EaI" data-alt="Video from Melton Barber House (0:47)"><span class="ico" style="background-image:url('https://lh3.googleusercontent.com/gps-cs-s/ANWiy9TmpFbckfccIgCvTWaEv83PXmN0CREpd7RRzR7j8pBBmIPmUPax98H4CCIU_OGd6zYrolGA0JJ6z9GEtyU16zxbwnrL0BRgBVLb2QdGm9u9cr8Jc7WLHXeRl1w_SHUle5y2EaI=w300-h300-p-k-no')"><span class="play" aria-hidden="true"><svg viewBox="0 0 10 10" width="9" height="9"><path d="M2 1l7 4-7 4z" fill="#fff"/></svg></span></span><span class="lbl">0:47</span></button>
     <button class="app reveal pop" data-type="img" data-src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9T3_ptnwBKkpAFgVq8TjUG1RYFi9oIlxgcercyPJjzajwkYLKgdnzOnvLW-Jsb0IRcMEEYlvLTdt9ubxCRCz4MUeNBg-notoe79omou7wJ3VTQyIUSO-SONc1qMqBVQ5GX5cmp6qg=w1600" data-alt="A fresh fade at Melton Barber House"><span class="ico" style="background-image:url('https://lh3.googleusercontent.com/gps-cs-s/ANWiy9T3_ptnwBKkpAFgVq8TjUG1RYFi9oIlxgcercyPJjzajwkYLKgdnzOnvLW-Jsb0IRcMEEYlvLTdt9ubxCRCz4MUeNBg-notoe79omou7wJ3VTQyIUSO-SONc1qMqBVQ5GX5cmp6qg=w300-h300-p-k-no')"></span><span class="lbl">Fade</span></button>
     <button class="app reveal pop" data-type="video" data-src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Sz00VHlPIfQi5cf_yIEd1DKAl4CccNajPV7Okr21OTMfTdyVBJs6ljiiHoNOxWGIP6iJ_63w_FlGo5TGC6PWHyVM_KqNMWfp0zV84dN9bFa5A7bGSweInmclTS1m96XboadClu" data-alt="Video from Melton Barber House (0:31)"><span class="ico" style="background-image:url('https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Sz00VHlPIfQi5cf_yIEd1DKAl4CccNajPV7Okr21OTMfTdyVBJs6ljiiHoNOxWGIP6iJ_63w_FlGo5TGC6PWHyVM_KqNMWfp0zV84dN9bFa5A7bGSweInmclTS1m96XboadClu=w300-h300-p-k-no')"><span class="play" aria-hidden="true"><svg viewBox="0 0 10 10" width="9" height="9"><path d="M2 1l7 4-7 4z" fill="#fff"/></svg></span></span><span class="lbl">0:31</span></button>
     <button class="app reveal pop" data-type="img" data-src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9QsVnCjA_zMD-G7gd9YYRgUb0hhpky5XwmDvxPYSJEuF6JIIephDZ-V_jxiOkRs2QpxokmQdJoPgfvQe5za6i4WlHxvmT-0ZEJolWfDEpnjg7OXvWxriMdQW46j0VbxupR2Leff=w1600" data-alt="Inside Melton Barber House"><span class="ico" style="background-image:url('https://lh3.googleusercontent.com/gps-cs-s/ANWiy9QsVnCjA_zMD-G7gd9YYRgUb0hhpky5XwmDvxPYSJEuF6JIIephDZ-V_jxiOkRs2QpxokmQdJoPgfvQe5za6i4WlHxvmT-0ZEJolWfDEpnjg7OXvWxriMdQW46j0VbxupR2Leff=w300-h300-p-k-no')"></span><span class="lbl">The shop</span></button>
     <button class="app reveal pop" data-type="video" data-src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9QcrSrae4cPyXRwwywyZW8dwZMuayuEIiSaS7LC1Q8JcAa9I0CF6l5Oy-8uNKRHW8BeUdJXCb6omix1yo2U8tk69LC6gHVojsp2woCpPcFmlouePXuzVSFkiCHPBjmGJk-MMF3gIw" data-alt="Video from Melton Barber House (0:27)"><span class="ico" style="background-image:url('https://lh3.googleusercontent.com/gps-cs-s/ANWiy9QcrSrae4cPyXRwwywyZW8dwZMuayuEIiSaS7LC1Q8JcAa9I0CF6l5Oy-8uNKRHW8BeUdJXCb6omix1yo2U8tk69LC6gHVojsp2woCpPcFmlouePXuzVSFkiCHPBjmGJk-MMF3gIw=w300-h300-p-k-no')"><span class="play" aria-hidden="true"><svg viewBox="0 0 10 10" width="9" height="9"><path d="M2 1l7 4-7 4z" fill="#fff"/></svg></span></span><span class="lbl">0:27</span></button>
-    <button class="app reveal pop" data-type="img" data-src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Tc6Z6pbD5Ao1eVVVo4YGpACwB4RO44IocDBfLnYPC3c5Um5ID4xxqc2m5Xb2aS-r2ltHqxDMK6xUF4WbNzJ8Vvkfw4bSoaNU71FYj9DovL7Ut1ZhxVNHm2Go1uCMJbXV_LyO1dHA=w1600" data-alt="The front counter and brick feature wall"><span class="ico" style="background-image:url('https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Tc6Z6pbD5Ao1eVVVo4YGpACwB4RO44IocDBfLnYPC3c5Um5ID4xxqc2m5Xb2aS-r2ltHqxDMK6xUF4WbNzJ8Vvkfw4bSoaNU71FYj9DovL7Ut1ZhxVNHm2Go1uCMJbXV_LyO1dHA=w300-h300-p-k-no')"></span><span class="lbl">Front desk</span></button>
+    <button class="app reveal pop" data-type="img" data-src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Tc6Z6pbD5Ao1eVVVo4YGpACwB4RO44IocDBfLnYPC3c5Um5ID4xxqc2m5Xb2aS-r2ltHqxDMK6xUF4WbNzJ8Vvkfw4bSoaNU71FYj9DovL7Ut1ZhxVNHm2Go1uCMJbXV_LyO1dHA=w1600" data-alt="The front counter and brick feature wall"><span class="ico" style="background-image:url('https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Tc6Z6pbD5Ao1eVVVo4YGpACwB4RO44IocDBfLnYPC3c5Um5ID4xxqc2m5Xb2aS-r2ltHqxDMK6xUF4WbNzJ8Vvkfw4bSoaNU71FYj9DovL7Ut1ZhxVNHm2Go1uCMJbXV_LyO1dHA=w300-h300-p-k-no')"></span><span class="lbl">Desk</span></button>
     <button class="app reveal pop" data-type="video" data-src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9TNDM7_MdjB0c4T_xH0fhQc79W_r17wXPPYmQyTHeBvQCRf7_SlsZZCUK3kxqY5vEI73ZoEyE9Q0oRCWsyL8AE7XsaAt0MU8RjIjn8D6ej0ec8VW_7stCWE1J2g6wn5hm-752Y" data-alt="Video from Melton Barber House (0:38)"><span class="ico" style="background-image:url('https://lh3.googleusercontent.com/gps-cs-s/ANWiy9TNDM7_MdjB0c4T_xH0fhQc79W_r17wXPPYmQyTHeBvQCRf7_SlsZZCUK3kxqY5vEI73ZoEyE9Q0oRCWsyL8AE7XsaAt0MU8RjIjn8D6ej0ec8VW_7stCWE1J2g6wn5hm-752Y=w300-h300-p-k-no')"><span class="play" aria-hidden="true"><svg viewBox="0 0 10 10" width="9" height="9"><path d="M2 1l7 4-7 4z" fill="#fff"/></svg></span></span><span class="lbl">0:38</span></button>
-    <button class="app reveal pop" data-type="img" data-src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9RMf6aCs1koVQVNzk3Gc72nykjqSZNOzw-bmmIVkCLpXfB6DfXpV6hPx2r4IHGeR6sAGN9R-8tdzEpuOFHenxQmgLEhxlxZoGA_vnMORBwB-X14m5dQ2rFZlb0t7rrJmn_aN_W_SA=w1600" data-alt="The shop floor at Melton Barber House"><span class="ico" style="background-image:url('https://lh3.googleusercontent.com/gps-cs-s/ANWiy9RMf6aCs1koVQVNzk3Gc72nykjqSZNOzw-bmmIVkCLpXfB6DfXpV6hPx2r4IHGeR6sAGN9R-8tdzEpuOFHenxQmgLEhxlxZoGA_vnMORBwB-X14m5dQ2rFZlb0t7rrJmn_aN_W_SA=w300-h300-p-k-no')"></span><span class="lbl">Shop floor</span></button>
+    <button class="app reveal pop" data-type="img" data-src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9RMf6aCs1koVQVNzk3Gc72nykjqSZNOzw-bmmIVkCLpXfB6DfXpV6hPx2r4IHGeR6sAGN9R-8tdzEpuOFHenxQmgLEhxlxZoGA_vnMORBwB-X14m5dQ2rFZlb0t7rrJmn_aN_W_SA=w1600" data-alt="The shop floor at Melton Barber House"><span class="ico" style="background-image:url('https://lh3.googleusercontent.com/gps-cs-s/ANWiy9RMf6aCs1koVQVNzk3Gc72nykjqSZNOzw-bmmIVkCLpXfB6DfXpV6hPx2r4IHGeR6sAGN9R-8tdzEpuOFHenxQmgLEhxlxZoGA_vnMORBwB-X14m5dQ2rFZlb0t7rrJmn_aN_W_SA=w300-h300-p-k-no')"></span><span class="lbl">Floor</span></button>
     <button class="app reveal pop" data-type="video" data-src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Sdu87MzwapjyGq3vPhj8r2KRQhOAlP9jl2sFtYtlKHfHLnLX8Cb_oS3X-B2ouoMR2kydCGLa02wHCtFUTZU1ksuNMMOLvk45A4TSKNTYry7qSiUCo1nkgj5gzyysbVcU6sCKKR" data-alt="Video from Melton Barber House (0:50)"><span class="ico" style="background-image:url('https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Sdu87MzwapjyGq3vPhj8r2KRQhOAlP9jl2sFtYtlKHfHLnLX8Cb_oS3X-B2ouoMR2kydCGLa02wHCtFUTZU1ksuNMMOLvk45A4TSKNTYry7qSiUCo1nkgj5gzyysbVcU6sCKKR=w300-h300-p-k-no')"><span class="play" aria-hidden="true"><svg viewBox="0 0 10 10" width="9" height="9"><path d="M2 1l7 4-7 4z" fill="#fff"/></svg></span></span><span class="lbl">0:50</span></button>
     <a class="app reveal pop" href="https://www.google.com/maps/place/Melton+Barber+House/@-37.682233,144.58329,17z/data=!4m7!3m6!1s0x6ad6ed6883b16115:0x29448b04a3ed61b8!8m2!3d-37.682233!4d144.58329!10e5" target="_blank" rel="noopener"><span class="ico more">+128</span><span class="lbl">More</span></a>
-   </div>
-   <div class="dock">
-    <a href="tel:0478554158" aria-label="Call the shop"><span class="ico d-call"><svg viewBox="0 0 24 24" width="24" height="24" fill="#151515"><path d="M6.6 10.8a15 15 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 013 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg></span></a>
-    <a href="https://www.instagram.com/meltonbarberhouse/" target="_blank" rel="noopener" aria-label="Instagram"><span class="ico d-ig"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none"/></svg></span></a>
-    <a href="https://www.google.com/maps/search/?api=1&amp;query=58+Palmerston+St+Melton+VIC+3337" target="_blank" rel="noopener" aria-label="Directions"><span class="ico d-map"><svg viewBox="0 0 24 24" width="24" height="24" fill="#B57CFF"><path d="M12 2a7 7 0 00-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 00-7-7zm0 9.5A2.5 2.5 0 1112 6.5a2.5 2.5 0 010 5z"/></svg></span></a>
-    <a href="https://www.facebook.com/MeltonBarberHouse/" target="_blank" rel="noopener" aria-label="Facebook"><span class="ico d-fb"><svg viewBox="0 0 24 24" width="22" height="22" fill="#151515"><path d="M14 8h3V4h-3c-2.8 0-4.5 1.8-4.5 4.6V11H7v4h2.5v7h4v-7h3l.5-4h-3.5V8.8c0-.5.3-.8.5-.8z"/></svg></span></a>
-   </div>
-   <div class="homebar"></div>
-  </div>
- </div>
+</div>
 </div></section>
 
 <div class="lb" hidden role="dialog" aria-modal="true" aria-label="Gallery viewer">
@@ -500,10 +471,6 @@ footer p a:hover{color:var(--lemon)}
  }catch(err){}
 
  document.getElementById('yr').textContent=new Date().getFullYear();
-
- // phone clock (Melbourne time)
- function tick(){try{var t=new Intl.DateTimeFormat('en-AU',{timeZone:'Australia/Melbourne',hour:'numeric',minute:'2-digit',hour12:true}).format(new Date()).replace(/\s?[ap]m/i,'');document.querySelectorAll('.clock').forEach(function(c){c.textContent=t})}catch(e){}}
- tick();setInterval(tick,30000);
 
  // lightbox for the gallery apps
  var apps=[].slice.call(document.querySelectorAll('.app[data-src]')),lb=document.querySelector('.lb'),stage=lb.querySelector('.lb-stage'),cnt=lb.querySelector('.lb-count'),cur=0,lastFocus=null;
