@@ -97,6 +97,14 @@ h1{font-family:var(--disp);font-weight:800;font-size:clamp(2.3rem,8.4vw,4rem);li
 .badge .spin{transform-origin:100px 100px;animation:spin 16s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
 
+/* ---------- brick wall texture ---------- */
+:root{--brick:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='128'%3E%3Crect width='256' height='128' fill='%23101011'/%3E%3Crect x='2' y='2' width='62' height='30' fill='%23302c2e'/%3E%3Crect x='66' y='2' width='62' height='30' fill='%23242224'/%3E%3Crect x='130' y='2' width='62' height='30' fill='%23222022'/%3E%3Crect x='194' y='2' width='62' height='30' fill='%23282527'/%3E%3Crect x='0' y='34' width='32' height='30' fill='%232d2a2c'/%3E%3Crect x='226' y='34' width='30' height='30' fill='%232d2a2c'/%3E%3Crect x='34' y='34' width='62' height='30' fill='%232d2a2c'/%3E%3Crect x='98' y='34' width='62' height='30' fill='%23302c2e'/%3E%3Crect x='162' y='34' width='62' height='30' fill='%23282527'/%3E%3Crect x='226' y='34' width='30' height='30' fill='%232a2628'/%3E%3Crect x='2' y='66' width='62' height='30' fill='%23282527'/%3E%3Crect x='66' y='66' width='62' height='30' fill='%232d2a2c'/%3E%3Crect x='130' y='66' width='62' height='30' fill='%23222022'/%3E%3Crect x='194' y='66' width='62' height='30' fill='%23222022'/%3E%3Crect x='0' y='98' width='32' height='30' fill='%232d2a2c'/%3E%3Crect x='226' y='98' width='30' height='30' fill='%232d2a2c'/%3E%3Crect x='34' y='98' width='62' height='30' fill='%232a2628'/%3E%3Crect x='98' y='98' width='62' height='30' fill='%232d2a2c'/%3E%3Crect x='162' y='98' width='62' height='30' fill='%23222022'/%3E%3Crect x='226' y='98' width='30' height='30' fill='%23282527'/%3E%3C/svg%3E")}
+.brick{position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(90deg,rgba(21,21,21,.8) 0%,rgba(21,21,21,.45) 45%,rgba(21,21,21,.15) 100%),var(--brick) 0 0/256px 128px;-webkit-mask-image:linear-gradient(to bottom,#000 55%,transparent);mask-image:linear-gradient(to bottom,#000 55%,transparent)}
+.hero::before{z-index:1}
+.hero::after{content:"";position:absolute;width:520px;height:520px;left:-200px;bottom:-220px;z-index:1;pointer-events:none;background:radial-gradient(circle,rgba(255,244,79,.10),transparent 65%)}
+.hero-grid{z-index:2}
+.alt{position:relative;isolation:isolate}
+.alt::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:var(--brick) 0 0/256px 128px;opacity:.6;-webkit-mask-image:radial-gradient(120% 90% at 50% 0%,#000,transparent 75%);mask-image:radial-gradient(120% 90% at 50% 0%,#000,transparent 75%)}
 /* ---------- marquee ---------- */
 .mq-wrap{overflow:hidden;padding:26px 0;margin:-26px 0;position:relative;z-index:2}
 .marquee{width:112%;margin-left:-6%;background:var(--lav);color:var(--char);overflow:hidden;rotate:-1.6deg;position:relative;z-index:2}
@@ -258,7 +266,7 @@ footer p a:hover{color:var(--lemon)}
 
 <main id="top">
 <!-- HERO -->
-<div class="hero"><div class="wrap hero-grid">
+<div class="hero"><div class="brick" aria-hidden="true"></div><div class="wrap hero-grid">
  <div data-stagger>
   <div class="tags reveal">
    <span class="tag status"><i class="dot"></i><span class="status-text">Open 7 days</span></span>
