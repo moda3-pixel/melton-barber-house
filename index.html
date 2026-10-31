@@ -88,10 +88,11 @@ header.scrolled{border-color:var(--line)}
 .logo i{flex:none;width:12px;height:32px;border-radius:6px;background:repeating-linear-gradient(-45deg,var(--lemon) 0 5px,var(--char) 5px 7px,var(--lav) 7px 12px,var(--char) 12px 14px);border:1px solid var(--line)}
 .logo span{color:var(--lemon)}
 nav ul{display:none;list-style:none;gap:30px}
-nav a{text-decoration:none;color:var(--mute);font-weight:500;font-size:.95rem;transition:color .2s;position:relative;padding:8px 0}
-nav a::after{content:"";position:absolute;left:0;right:0;bottom:2px;height:2px;border-radius:2px;background:var(--lemon);transform:scaleX(0);transform-origin:0 50%;transition:transform .35s var(--pop)}
-nav a:hover,nav a.on{color:var(--lemon)}
-nav a:hover::after,nav a.on::after{transform:scaleX(1)}
+/* header links only: the gallery dock and mobile sheet are also <nav>s and must not inherit this */
+header nav a{text-decoration:none;color:var(--mute);font-weight:500;font-size:.95rem;transition:color .2s;position:relative;padding:8px 0}
+header nav a::after{content:"";position:absolute;left:0;right:0;bottom:2px;height:2px;border-radius:2px;background:var(--lemon);transform:scaleX(0);transform-origin:0 50%;transition:transform .45s cubic-bezier(.2,.7,.1,1)}
+header nav a:hover,header nav a.on{color:var(--lemon)}
+header nav a:hover::after,header nav a.on::after{transform:scaleX(1)}
 
 /* mobile menu */
 .menu-btn{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:2px solid var(--line);background:transparent;color:var(--text);cursor:pointer;transition:border-color .25s,rotate .35s var(--pop)}
