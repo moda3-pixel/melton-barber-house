@@ -154,11 +154,11 @@ h1 .hl::after{content:"";position:absolute;left:0;right:.25em;bottom:-.06em;heig
 .visual{position:relative;height:360px;margin-bottom:30px}
 .panel{position:absolute;inset:0;border-radius:30px;border:1px solid var(--line);overflow:hidden;display:flex;align-items:center;justify-content:center;
  background:radial-gradient(rgba(255,255,255,.07) 1px,transparent 1px) 0 0/18px 18px,var(--char2)}
-/* real shop photo behind the pole, toned into the charcoal/lavender palette; colour comes back on hover */
 .panel{justify-content:flex-start;padding-left:clamp(28px,11%,64px)}
-.panel-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 35%;filter:grayscale(1) contrast(1.12) brightness(.62);transition:filter .7s ease,transform 1.2s var(--pop)}
-.panel::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(100deg,rgba(21,21,21,.92) 0%,rgba(21,21,21,.35) 38%,rgba(181,124,255,.28) 100%),radial-gradient(rgba(255,255,255,.07) 1px,transparent 1px) 0 0/18px 18px;mix-blend-mode:normal;transition:opacity .7s}
-.visual:hover .panel-photo{filter:grayscale(0) contrast(1.04) brightness(.8);transform:scale(1.03)}
+/* the haircut sits right of the pole, in colour; the left edge stays dark so the pole reads */
+.panel-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:64% 42%;filter:contrast(1.04) brightness(.78);transition:filter .7s ease,transform 1.2s var(--pop)}
+.panel::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(100deg,rgba(21,21,21,.9) 0%,rgba(21,21,21,.3) 34%,rgba(21,21,21,0) 60%,rgba(181,124,255,.16) 100%),radial-gradient(rgba(255,255,255,.07) 1px,transparent 1px) 0 0/18px 18px;mix-blend-mode:normal;transition:opacity .7s}
+.visual:hover .panel-photo{filter:contrast(1.04) brightness(.9);transform:scale(1.03)}
 .visual:hover .panel::after{opacity:.6}
 .pole{z-index:1}
 .pole{position:relative;width:86px;height:76%;border-radius:43px;overflow:hidden;border:4px solid var(--char3);box-shadow:0 0 70px rgba(181,124,255,.4),0 0 0 1px var(--line)}
@@ -170,7 +170,8 @@ h1 .hl::after{content:"";position:absolute;left:0;right:.25em;bottom:-.06em;heig
 /* pole hangs from the top so the spinning badge has its own corner */
 .panel{align-items:flex-start}
 .panel .pole{height:60%;margin-top:clamp(26px,8%,44px)}
-@media(max-width:639px){.visual .chip.b{bottom:auto;top:66px}}
+/* phones: "walk-ins" chip sits bottom-right, clear of the haircut and the badge */
+@media(max-width:379px){.visual .chip.b{right:12px;padding:8px 11px;font-size:.6rem}}
 .chip{position:absolute;font-family:var(--disp);font-weight:700;font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;padding:9px 14px;border-radius:999px;animation:bob 4s ease-in-out infinite}
 .chip.a{top:22px;right:20px;background:var(--lav);color:var(--char)}
 .chip.b{bottom:26px;right:20px;border:1.5px solid var(--lemon);color:var(--lemon);background:var(--char);animation-delay:-2s}
@@ -215,14 +216,14 @@ h3{font-family:var(--disp);font-weight:700;font-size:1.15rem;line-height:1.25;le
 .svc:hover .arrow{background:var(--lemon);border-color:var(--lemon);color:var(--char);rotate:-45deg}
 /* feature card: the haircut, shown with a real fade from the shop */
 .svc.feat{min-height:420px;display:flex;flex-direction:column;justify-content:flex-end;border-color:transparent;background:var(--char3)}
-.svc.feat .svc-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%;filter:grayscale(.25) contrast(1.05) brightness(.8);transition:transform 1.1s var(--pop),filter .6s}
+.svc.feat .svc-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 28%;filter:brightness(.88);transition:transform 1.1s var(--pop),filter .6s}
 .svc.feat::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(21,21,21,.96) 8%,rgba(21,21,21,.55) 45%,rgba(21,21,21,.05) 80%);pointer-events:none}
 .svc.feat>*:not(.svc-photo){position:relative;z-index:1}
 .svc.feat .no{position:absolute;top:28px;left:26px;margin:0;background:var(--lav);color:var(--char);border-radius:999px;padding:5px 11px;font-size:.75rem}
 .svc.feat h3{font-size:clamp(1.6rem,4vw,2.5rem);font-weight:800;letter-spacing:-.025em;line-height:1.05}
 .svc.feat p{color:rgba(245,245,239,.8);max-width:26em}
 .svc.feat .arrow{position:absolute;z-index:1}
-.svc.feat:hover .svc-photo{transform:scale(1.05);filter:grayscale(0) contrast(1.05) brightness(.85)}
+.svc.feat:hover .svc-photo{transform:scale(1.05);filter:brightness(.95)}
 /* kids' haircuts: a lighter, lavender-edged card so it reads as part of the menu, not an afterthought */
 .svc.kids{border-color:rgba(181,124,255,.35);background:linear-gradient(120deg,rgba(181,124,255,.14),transparent 55%),var(--char2)}
 .svc.kids .no{color:var(--lemon)}
@@ -382,7 +383,7 @@ footer a{text-decoration:none}
 footer p a:hover{color:var(--lemon)}
 
 @media(min-width:640px){
- .apps{grid-template-columns:repeat(5,1fr)}
+ .apps{grid-template-columns:repeat(4,1fr)}
  .services{grid-template-columns:repeat(2,1fr)}
  .svc.feat{grid-column:span 2}
  .bento{grid-template-columns:repeat(2,1fr)}
@@ -463,7 +464,7 @@ footer p a:hover{color:var(--lemon)}
  </div>
 
  <div class="visual reveal pop">
-  <div class="panel"><img class="panel-photo" src="images/work-900.webp" srcset="images/work-600.webp 600w, images/work-900.webp 900w, images/work-1200.webp 1200w" sizes="(min-width:900px) 460px, 100vw" width="900" height="1200" fetchpriority="high" alt="A Melton Barber House barber at work on a client's cut"><div class="pole" aria-hidden="true"><div class="stripes"></div></div></div>
+  <div class="panel"><img class="panel-photo" src="images/hard-part-skin-fade-900.webp" srcset="images/hard-part-skin-fade-600.webp 600w, images/hard-part-skin-fade-900.webp 900w, images/hard-part-skin-fade-1079.webp 1079w" sizes="(min-width:900px) 460px, 100vw" width="1079" height="1079" fetchpriority="high" alt="A hard part with a skin fade and a slicked-back top"><div class="pole" aria-hidden="true"><div class="stripes"></div></div></div>
   <span class="chip a" aria-hidden="true">Late Thu &amp; Fri</span>
   <span class="chip b" aria-hidden="true">Walk-ins welcome</span>
   <svg class="badge" viewBox="0 0 200 200" aria-hidden="true">
@@ -485,7 +486,7 @@ footer p a:hover{color:var(--lemon)}
  <div class="label reveal left"><b>01</b> Services</div>
  <h2 class="reveal">Everything you need for a <span class="hl">fresh look.</span></h2>
  <div class="services" data-stagger>
-  <article class="svc feat reveal pop"><img class="svc-photo" loading="lazy" decoding="async" width="900" height="1200" src="images/fade-900.webp" srcset="images/fade-600.webp 600w, images/fade-900.webp 900w, images/fade-1200.webp 1200w, images/fade-1500.webp 1500w" sizes="(min-width:900px) 740px, 100vw" alt="A skin fade finished at Melton Barber House"><span class="no">01</span><h3>Men's haircut</h3><p>Skin fades and detailed cuts, clean, sharp and finished properly, whatever style you're after.</p><span class="arrow" aria-hidden="true">→</span></article>
+  <article class="svc feat reveal pop"><img class="svc-photo" loading="lazy" decoding="async" width="1440" height="1440" src="images/premium-quiff-skin-fade-900.webp" srcset="images/premium-quiff-skin-fade-600.webp 600w, images/premium-quiff-skin-fade-900.webp 900w, images/premium-quiff-skin-fade-1200.webp 1200w, images/premium-quiff-skin-fade-1440.webp 1440w" sizes="(min-width:900px) 740px, 100vw" alt="A textured quiff with a high skin fade and a sharp line-up"><span class="no">01</span><h3>Men's haircut</h3><p>Skin fades and detailed cuts, clean, sharp and finished properly, whatever style you're after.</p><span class="arrow" aria-hidden="true">→</span></article>
   <article class="svc reveal pop"><span class="no">02</span><h3>Beard trim</h3><p>Shaped and tidied to suit your face and your style.</p><span class="arrow" aria-hidden="true">→</span></article>
   <article class="svc reveal pop"><span class="no">03</span><h3>Head shave</h3><p>A smooth, close finish from front to back.</p><span class="arrow" aria-hidden="true">→</span></article>
   <article class="svc reveal pop"><span class="no">04</span><h3>Hot towel shave</h3><p>The traditional shave: hot towel, close blade, fresh finish.</p><span class="arrow" aria-hidden="true">→</span></article>
@@ -515,17 +516,23 @@ footer p a:hover{color:var(--lemon)}
  <div class="work-head">
   <div class="label reveal left"><b>03</b> Our work</div>
   <h2 class="reveal">Straight from <span class="hl">the chair.</span></h2>
-  <p class="lead reveal">Straight from the shop. Tap any photo to open it, then swipe through.</p>
+  <p class="lead reveal">Fades, tapers, beards and freehand designs from our Instagram. Tap any photo to open it, then swipe through.</p>
   <div class="cta reveal"><a class="btn lav" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/place/Melton+Barber+House/@-37.682233,144.58329,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad6ed6883b16115:0x29448b04a3ed61b8!8m2!3d-37.682233!4d144.58329!16s%2Fg%2F11g11f7mnr">See all on Google</a><a class="btn" target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/meltonbarberhouse/">Follow on Instagram</a></div>
  </div>
  <div class="screen">
  <div class="apps" data-stagger>
-    <button class="app widget reveal pop" data-type="img" data-src="images/work-1800.webp" data-alt="Barbers at work inside Melton Barber House"><span class="ico" style="background-image:url('images/work-sq-720.webp')"></span><span class="lbl">At work</span></button>
-    <button class="app reveal pop" data-type="img" data-src="images/fade-1800.webp" data-alt="A fresh fade at Melton Barber House"><span class="ico" style="background-image:url('images/fade-sq-360.webp')"></span><span class="lbl">Fade</span></button>
-    <button class="app reveal pop" data-type="img" data-src="images/shop-1600.webp" data-alt="Inside Melton Barber House"><span class="ico" style="background-image:url('images/shop-sq-360.webp')"></span><span class="lbl">The shop</span></button>
-    <button class="app reveal pop" data-type="img" data-src="images/desk-1800.webp" data-alt="The front counter and brick feature wall"><span class="ico" style="background-image:url('images/desk-sq-360.webp')"></span><span class="lbl">Desk</span></button>
-    <button class="app reveal pop" data-type="img" data-src="images/floor-1800.webp" data-alt="The shop floor at Melton Barber House"><span class="ico" style="background-image:url('images/floor-sq-360.webp')"></span><span class="lbl">Floor</span></button>
-    <a class="app reveal pop" href="https://www.google.com/maps/place/Melton+Barber+House/@-37.682233,144.58329,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad6ed6883b16115:0x29448b04a3ed61b8!8m2!3d-37.682233!4d144.58329!16s%2Fg%2F11g11f7mnr" target="_blank" rel="noopener noreferrer" aria-label="See all 138 photos on Google Maps (opens in a new tab)"><span class="ico more">+133</span><span class="lbl">More</span></a>
+    <button class="app widget reveal pop" data-type="img" data-src="images/pompadour-fade-beard.webp" data-alt="A pompadour with a skin fade and a shaped beard"><span class="ico" style="background-image:url('images/pompadour-fade-beard-sq.webp')"></span><span class="lbl">Pompadour</span></button>
+    <button class="app reveal pop" data-type="img" data-src="images/textured-drop-fade.webp" data-alt="A drop fade with a textured, blonde-tipped top"><span class="ico" style="background-image:url('images/textured-drop-fade-sq.webp')"></span><span class="lbl">Drop fade</span></button>
+    <button class="app reveal pop" data-type="img" data-src="images/freehand-hair-design.webp" data-alt="A freehand hair design cut into a skin fade"><span class="ico" style="background-image:url('images/freehand-hair-design-sq.webp')"></span><span class="lbl">Hair design</span></button>
+    <button class="app reveal pop" data-type="img" data-src="images/blonde-quiff-sculpted-beard.webp" data-alt="A blonde quiff with a taper and a sculpted beard"><span class="ico" style="background-image:url('images/blonde-quiff-sculpted-beard-sq.webp')"></span><span class="lbl">Quiff</span></button>
+    <button class="app reveal pop" data-type="img" data-src="images/slick-back-undercut-beard.webp" data-alt="A slick-back undercut with a hard part and a full beard"><span class="ico" style="background-image:url('images/slick-back-undercut-beard-sq.webp')"></span><span class="lbl">Undercut</span></button>
+    <button class="app reveal pop" data-type="img" data-src="images/slick-back-taper.webp" data-alt="A slick back with a low taper"><span class="ico" style="background-image:url('images/slick-back-taper-sq.webp')"></span><span class="lbl">Slick back</span></button>
+    <button class="app reveal pop" data-type="img" data-src="images/mid-fade-textured-crop.webp" data-alt="A mid fade with a textured crop"><span class="ico" style="background-image:url('images/mid-fade-textured-crop-sq.webp')"></span><span class="lbl">Mid fade</span></button>
+    <button class="app reveal pop" data-type="img" data-src="images/curly-top-taper.webp" data-alt="A curly top with a tapered back and sides"><span class="ico" style="background-image:url('images/curly-top-taper-sq.webp')"></span><span class="lbl">Curly top</span></button>
+    <button class="app reveal pop" data-type="img" data-src="images/side-part-long-beard.webp" data-alt="A side part with a fade and a long beard"><span class="ico" style="background-image:url('images/side-part-long-beard-sq.webp')"></span><span class="lbl">Side part</span></button>
+    <button class="app reveal pop" data-type="img" data-src="images/work-1800.webp" data-alt="Barbers at work inside Melton Barber House"><span class="ico" style="background-image:url('images/work-sq-320.webp')"></span><span class="lbl">At work</span></button>
+    <button class="app reveal pop" data-type="img" data-src="images/desk-1800.webp" data-alt="The mirrors, stations and brick feature wall inside the shop"><span class="ico" style="background-image:url('images/desk-sq-360.webp')"></span><span class="lbl">The shop</span></button>
+    <a class="app reveal pop" href="https://www.google.com/maps/place/Melton+Barber+House/@-37.682233,144.58329,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad6ed6883b16115:0x29448b04a3ed61b8!8m2!3d-37.682233!4d144.58329!16s%2Fg%2F11g11f7mnr" target="_blank" rel="noopener noreferrer" aria-label="See all 138 photos on Google Maps (opens in a new tab)"><span class="ico more">138</span><span class="lbl">On Google</span></a>
     <a class="app m-only reveal pop" href="https://www.google.com/maps/place/Melton+Barber+House/@-37.682233,144.58329,17z/data=!3m1!4b1!4m6!3m5!1s0x6ad6ed6883b16115:0x29448b04a3ed61b8!8m2!3d-37.682233!4d144.58329!16s%2Fg%2F11g11f7mnr" target="_blank" rel="noopener noreferrer" aria-label="Read our 249 Google reviews, rated 4.6 (opens in a new tab)"><span class="ico d-rev" aria-hidden="true"><b>4.6</b><small>★★★★★</small></span><span class="lbl">Reviews</span></a>
  </div>
  <nav class="dock" aria-label="Find Melton Barber House online">
