@@ -227,6 +227,18 @@ h3{font-family:var(--disp);font-weight:700;font-size:1.15rem;line-height:1.25;le
 /* kids' haircuts: a lighter, lavender-edged card so it reads as part of the menu, not an afterthought */
 .svc.kids{border-color:rgba(181,124,255,.35);background:linear-gradient(120deg,rgba(181,124,255,.14),transparent 55%),var(--char2)}
 .svc.kids .no{color:var(--lemon)}
+/* tinted service cards: one shared recipe, each card sets its own colours */
+.svc.tint{isolation:isolate;border-color:rgba(255,255,255,.07);
+ background:radial-gradient(120% 90% at 100% 0%,var(--glow),transparent 62%),radial-gradient(95% 75% at 0% 100%,var(--glow2),transparent 70%),linear-gradient(165deg,var(--tone) 0%,var(--char2) 82%);
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 18px 40px -30px rgba(0,0,0,.9)}
+.svc.tint::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:repeating-linear-gradient(-45deg,rgba(255,255,255,.04) 0 1px,transparent 1px 11px);-webkit-mask-image:radial-gradient(75% 65% at 100% 0%,#000,transparent 72%);mask-image:radial-gradient(75% 65% at 100% 0%,#000,transparent 72%)}
+.svc.tint::before{z-index:-1;width:280px;height:280px;right:-120px;top:-120px;background:radial-gradient(circle,var(--hover),transparent 70%)}
+.svc.tint:hover{border-color:var(--edge);box-shadow:inset 0 1px 0 rgba(255,255,255,.09),0 26px 50px -26px var(--shadow)}
+.t-beard{--tone:#35251a;--glow:rgba(214,150,96,.2);--glow2:rgba(120,70,40,.2);--hover:rgba(230,165,105,.3);--edge:rgba(214,150,96,.55);--shadow:rgba(150,95,55,.6)}
+.t-shave{--tone:#24212d;--glow:rgba(181,124,255,.2);--glow2:rgba(90,60,150,.14);--hover:rgba(181,124,255,.34);--edge:var(--lav);--shadow:rgba(181,124,255,.5)}
+.t-towel{--tone:#35291a;--glow:rgba(240,180,90,.19);--glow2:rgba(190,120,50,.13);--hover:rgba(255,200,120,.28);--edge:rgba(240,185,100,.55);--shadow:rgba(200,140,60,.5)}
+.t-colour{--tone:#34171f;--glow:rgba(181,124,255,.15);--glow2:rgba(150,40,70,.24);--hover:rgba(190,135,255,.3);--edge:rgba(205,150,255,.6);--shadow:rgba(140,40,80,.65)}
+.t-thread{--tone:#212024;--glow:rgba(181,124,255,.1);--glow2:rgba(181,124,255,.15);--hover:rgba(181,124,255,.28);--edge:rgba(181,124,255,.7);--shadow:rgba(181,124,255,.45)}
 /* team + award tiles */
 .tile .kicker{font-family:var(--disp);font-weight:700;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin-bottom:auto;padding-bottom:22px}
 .names{list-style:none;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 0;margin-bottom:12px;font-family:var(--disp);font-weight:800;font-size:clamp(1.9rem,8vw,2.1rem);line-height:1.05;letter-spacing:-.03em}
@@ -515,11 +527,11 @@ footer p a:hover{color:var(--lemon)}
  <h2 class="reveal">Everything you need for a <span class="hl">fresh look.</span></h2>
  <div class="services" data-stagger>
   <article class="svc feat reveal pop"><img class="svc-photo" loading="lazy" decoding="async" width="1440" height="1440" src="images/premium-quiff-skin-fade-900.webp" srcset="images/premium-quiff-skin-fade-600.webp 600w, images/premium-quiff-skin-fade-900.webp 900w, images/premium-quiff-skin-fade-1200.webp 1200w, images/premium-quiff-skin-fade-1440.webp 1440w" sizes="(min-width:900px) 740px, 100vw" alt="A textured quiff with a high skin fade and a sharp line-up"><span class="no">01</span><h3>Men's haircut</h3><p>Skin fades and detailed cuts, clean, sharp and finished properly, whatever style you're after.</p><span class="arrow" aria-hidden="true">→</span></article>
-  <article class="svc reveal pop"><span class="no">02</span><h3>Beard trim</h3><p>Shaped and tidied to suit your face and your style.</p><span class="arrow" aria-hidden="true">→</span></article>
-  <article class="svc reveal pop"><span class="no">03</span><h3>Head shave</h3><p>A smooth, close finish from front to back.</p><span class="arrow" aria-hidden="true">→</span></article>
-  <article class="svc reveal pop"><span class="no">04</span><h3>Hot towel shave</h3><p>The traditional shave: hot towel, close blade, fresh finish.</p><span class="arrow" aria-hidden="true">→</span></article>
-  <article class="svc reveal pop"><span class="no">05</span><h3>Colour</h3><p>Cover the greys or try something new.</p><span class="arrow" aria-hidden="true">→</span></article>
-  <article class="svc reveal pop"><span class="no">06</span><h3>Threading &amp; wax</h3><p>Brows and facial hair cleaned up, quick and neat.</p><span class="arrow" aria-hidden="true">→</span></article>
+  <article class="svc tint t-beard reveal pop"><span class="no">02</span><h3>Beard trim</h3><p>Shaped and tidied to suit your face and your style.</p><span class="arrow" aria-hidden="true">→</span></article>
+  <article class="svc tint t-shave reveal pop"><span class="no">03</span><h3>Head shave</h3><p>A smooth, close finish from front to back.</p><span class="arrow" aria-hidden="true">→</span></article>
+  <article class="svc tint t-towel reveal pop"><span class="no">04</span><h3>Hot towel shave</h3><p>The traditional shave: hot towel, close blade, fresh finish.</p><span class="arrow" aria-hidden="true">→</span></article>
+  <article class="svc tint t-colour reveal pop"><span class="no">05</span><h3>Colour</h3><p>Cover the greys or try something new.</p><span class="arrow" aria-hidden="true">→</span></article>
+  <article class="svc tint t-thread reveal pop"><span class="no">06</span><h3>Threading &amp; wax</h3><p>Brows and facial hair cleaned up, quick and neat.</p><span class="arrow" aria-hidden="true">→</span></article>
   <article class="svc kids reveal pop"><span class="no">07</span><h3>Kids' haircuts</h3><p>Sharp, tidy cuts for the young ones too. Bring them in any day.</p><span class="arrow" aria-hidden="true">→</span></article>
  </div>
  <p class="note reveal">For current prices, call <a href="tel:0478554158">0478 554 158</a> or ask in store.</p>
